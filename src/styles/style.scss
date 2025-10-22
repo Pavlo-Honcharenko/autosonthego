@@ -1,0 +1,894 @@
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Підключення CSS-змінних
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// @use "includes/variables.css";
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Підключення загальних віддалених шрифтів (Google Fonts)
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Стилі тега BODY
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+body {
+	min-width: #{$minWidth}px;
+	color: $mainColor;
+	font-family: $fontFamily;
+	font-size: #{$fontSize}px;
+
+	// Скролл заблоковано
+	[data-fls-scrolllock] & {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+	// Сайт завантажений
+	[data-fls-loaded] & {
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Оболонка WRAPPER
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: clip;
+	// Притискаємо footer
+	> main {
+		flex: 1 1 auto;
+	}
+	// Фікс для слайдерів
+	> * {
+		min-width: 0;
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Обмежуючий контейнер
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Стилі будуть застосовуватись до
+// всіх класів, що містять *__container
+// Наприклад header__container, main__container і т.п.
+// Сніппет (HTML): cnt
+
+@if ($responsiveType==1) {
+	// Чуйна
+	[class*="__container"] {
+		width: 100%;
+		@if ($maxWidthContainer>0) {
+			max-width: #{$containerWidth}px;
+			margin: 0 auto;
+		}
+		@if ($containerPadding>0) {
+			@if ($maxWidthContainer>0) {
+				padding-left: #{math.div($containerPadding, 2)}px;
+				padding-right: #{math.div($containerPadding, 2)}px;
+			} @else {
+				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
+				@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
+			}
+		}
+	}
+} @else {
+	// Брейк-поїнтами
+	[class*="__container"] {
+		width: 100%;
+		margin: 0 auto;
+		@if ($maxWidthContainer>0) {
+			max-width: #{$maxWidthContainer}px;
+		} @else {
+			@if ($containerPadding>0) {
+				padding-left: #{math.div($containerPadding, 2)}px;
+				padding-right: #{math.div($containerPadding, 2)}px;
+			}
+		}
+		@media (max-width: toEm($pc)) {
+			max-width: 970px;
+		}
+		@media (max-width: toEm($tablet)) {
+			max-width: 750px;
+		}
+		@media (max-width: toEm($mobile)) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding-left: #{math.div($containerPadding, 2)}px;
+				padding-right: #{math.div($containerPadding, 2)}px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Загальні стилі для усього сайту
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.rounded {
+	overflow: hidden;
+    border-radius: 13px;
+}
+
+section {
+	position: relative;
+	z-index: 0;
+}
+.bg-image {
+	position: absolute;
+	top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	object-fit: cover; 
+    object-position: center center;
+    z-index: -1;
+}
+.black-circle {
+	position: relative;
+	width: fit-content;
+	padding-right: 10px;
+
+	&::after{
+		content:'';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background-color: #0D233B;
+	}
+}
+.white-circle {
+	position: relative;
+	width: fit-content;
+	padding-right: 10px;
+
+	&::after{
+		content:'';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background-color: #ffffff;
+	}
+}
+.grey-circle {
+	position: relative;
+	width: fit-content;
+	padding-right: 16px;
+
+	&::after{
+		content:'';
+		position: absolute;
+		top: 7px;
+		right: 0;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: #0d233b;
+	}
+}
+.yellow-grey-circle {
+	position: relative;
+	width: fit-content;
+	padding-right: 16px;
+
+	&::after{
+		content:'';
+		position: absolute;
+		top: 7px;
+		right: 0;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: #fffd74;
+	}
+}
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// HEADER
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.header {
+	width: 100%;
+	position: fixed !important;
+	top: 0;
+    right: 0;
+    left: 0;
+	background-color: transparent;
+    z-index: 50;
+
+	// .header__container
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 60px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+.site-branding {
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.menu {
+	display: flex;
+	align-items: center;
+
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 60px;
+		width: 100%;
+		flex: 1 1 100%;
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		flex: 1 1 100%;
+
+		a {
+			color: #fff;
+			font-size: 14px;
+		}
+	}
+}
+.icon-menu {
+}
+.menu-item {
+	position: relative; 
+	padding: 10px 12px;
+	cursor: pointer;
+}
+.menu-item-has-children>a {
+	position: relative;
+	padding-right: 18px;
+
+	&::after{
+		content:'';
+		position: absolute;
+		top: calc(50% - 2px);
+		right: 0;
+		display: block;
+		height: 5px;
+		width: 10px;
+		background: url('@img/icons/arrow-menu--select-white.svg') center center / cover no-repeat;
+	}
+}
+
+.sub-menu {
+	position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* Стан за замовчуванням (приховано) */
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+
+	background-color: #0d233b86; 
+		backdrop-filter: blur(7px);
+	
+    transition: 
+        max-height 0.3s ease-in-out,
+        opacity 0.3s ease-in-out,
+		background-color 0.3s ease-in-out,
+        visibility 0.3s ease-in-out;
+}
+/* Клас, який додає JavaScript для відкриття */
+.sub-menu-open > .sub-menu {
+    max-height: 500px; /* Достатньо велике значення для "розкриття" */
+    visibility: visible;
+    opacity: 1;
+}
+
+.header-phone {
+	display: flex;
+	align-items: center;
+	white-space: nowrap;
+	gap: 8px;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: -0.02em;
+
+	a {
+		white-space: nowrap;
+		color: #FFFD74;
+		text-decoration: underline;
+		letter-spacing: -0.02em;
+
+		&:hover{
+			color: #f7f42a;
+		}
+	}
+}
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// MAIN PAGE
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+.page {
+	// .page--index
+	&--index {
+		background-color: #0D233B;
+		padding: 10px;
+	}
+}
+
+.hero {
+	min-height: 98vh;
+
+	// .hero__container
+	&__container {
+		padding-top: 130px;
+	}
+
+	h1 {
+		font-family: "FunnelDisplay";
+		color: #fff;
+		font-size: 10vw;
+		text-align: center;
+		font-weight: 700;
+
+		@media (min-width:toEm(1600)){
+			font-size: 150px;
+		}
+
+		span {
+			position: relative;
+
+			span {
+				position: absolute;
+				top: calc(50% - 0.34vw);
+				left: 1.4vw;
+				font-weight: 400;
+				font-size: 0.9vw;
+				line-height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+
+				@media (min-width:toEm(1600)){
+					top: calc(50% - 5px);
+					left: 20px;
+					font-weight: 400;
+					font-size: 15px;
+				}
+
+
+				span:last-child {
+					top: calc(50% + 0.7vw);
+					font-size: 1vw;
+					font-weight: 700;
+
+					@media (min-width:toEm(1600)){
+						top: calc(50% + 11px);
+						font-size: 16px;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// MARQUEE
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.block-marquee {
+	padding-top: 80px;
+	padding-bottom: 80px;
+
+	.block-marquee__container {
+
+	}
+	
+	.block-marquee__image-wrapper {
+		height: 40px;
+		display: flex;
+		justify-content:center;
+		align-items: center;
+
+		img {
+			max-height: 40px;
+		}
+	}
+}
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// WELCOME SECTION
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.welcome {
+	background-color: #EEF4FF;
+	padding-top: 80px;
+	padding-bottom: 80px;
+
+	.bg-image {
+		object-fit: contain;
+    	object-position: center right;
+	}
+	// .welcome__container
+	&__container {
+	}
+	// .welcome__header
+	&__header {
+		display: flex;
+		gap: 60px;
+		padding-bottom: 40px;
+		border-bottom: 1px solid #D7DFEB;
+	}
+	// .welcome__label
+	&__label {
+		flex: 0 1 25%;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
+		color: #0d233b;
+		opacity: 0.7;
+		display: flex;
+		align-items: flex-end;
+
+		.black-circle {
+			&::after {
+				top: 2px;
+			}
+		}
+	}
+	// .welcome__title
+	&__title {
+		font-family: "FunnelDisplay";
+		flex: 0 1 50%;
+		font-weight: 600;
+		font-size: 64px;
+		line-height: 100%;
+		color: #0d233b;
+		padding-left: 24px;
+	}
+	// .welcome__body
+	&__body {
+		padding-top: 80px;
+		display: flex;
+		gap: 60px;
+	}
+	// .welcome__main-image
+	&__main-image {
+		flex: 0 1 25%;
+
+		img {
+			max-width: 325px;
+			border-radius: 6px;
+		}
+	}
+}
+.welcome-list {
+	flex: 0 1 50%;
+
+	// .welcome-list__item
+	&__item {
+		display: flex;
+		gap: 22px;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+	// .welcome-list__digit
+	&__digit {
+		font-weight: 900;
+		font-size: 20px;
+		line-height: 100%;
+		text-align: right;
+		background: linear-gradient(180deg, #fc0 0%, #fc0 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	// .welcome-list__content
+	&__content {
+		border-bottom: 1px solid #D7DFEB;
+	}
+	// .welcome-list__title
+	&__title {
+		font-weight: 800;
+		font-size: 20px;
+		line-height: 120%;
+		color: #0d233b;
+		padding-bottom: 20px;
+	}
+	// .welcome-list__text
+	&__text {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 120%;
+		color: #0d233b;
+		opacity: 0.7;
+		padding-bottom: 16px;
+	}
+}
+.welcome-facts {
+	flex: 0 1 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	// .welcome-facts__title
+	&__title {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 120%;
+		color: #0d233b;
+		max-width: 144px;
+		padding-bottom: 30px;
+	}
+	.black-circle {
+		&::after {
+			top: 4px;
+		}
+	}
+	// .welcome-facts__list
+	&__list {
+	}
+	// .welcome-facts__item
+	&__item {
+		border-radius: 5px;
+		padding: 12px 12px 12px 20px;
+		width: 210px;
+		background-image: linear-gradient(180deg, rgba(255, 204, 0, 0) 0%, #fc0 100%);
+		background-color: #fffd74;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		justify-content: space-between;
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+	// .welcome-facts__digit
+	&__digit {
+		font-weight: 400;
+		font-size: 36px;
+		line-height: 120%;
+		color: #0d233b;
+		opacity: 0.9;
+		white-space: nowrap;
+		display: flex;
+		flex: 1 0 70px;
+	}
+	// .welcome-facts__text
+	&__text {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 100%;
+		color: #0d233b;
+		opacity: 0.9;
+	}
+	.digit {
+	}
+}
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// HOW SECTION
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.how {
+	padding-top: 80px;
+	// .how__header
+	&__header {
+		
+	}
+	// .how__container
+	&__container {
+	}
+	// .how__label
+	&__label {
+		width: fit-content;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
+		color: #fff;
+		opacity: 0.7;
+		margin-bottom: 40px;
+	}
+	// .how__title
+	&__title {
+		font-family: "FunnelDisplay";
+		font-weight: 600;
+		font-size: 64px;
+		line-height: 100%;
+		color: #fff;
+		margin-bottom: 40px;
+	}
+	// .how__body
+	&__body {
+		position: relative;
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	// .how__items
+	&__items {
+		display: flex;
+		gap: 10px;
+	}
+	// .how__item
+	&__item {
+
+	}
+	.bg-image {
+	}
+}
+
+.how-item {
+	border-radius: 5px;
+	padding: 40px 12px;
+		// .how-item__digit
+		&__digit {
+			font-family: "FunnelDisplay";
+			font-weight: 700;
+			font-size: 36px;
+			line-height: 100%;
+			color: #0d233b;
+			opacity: 0.3;
+			margin-bottom: 10px;
+		}
+		// .how-item__decor
+		&__decor {
+			margin-bottom: 60px;
+		}
+		// .how-item__title
+		&__title {
+			font-family: "FunnelDisplay";
+			font-weight: 400;
+			font-size: 36px;
+			line-height: 100%;
+			letter-spacing: -0.02em;
+			color: #0d233b;
+			margin-bottom: 20px;
+		}
+		// .how-item__text
+		&__text {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 120%;
+			color: #0d233b;
+			opacity: 0.9;
+
+			p {
+				&:not(:last-child) {margin-bottom: 20px;}
+			}
+		}
+}
+.how-item--yellow {
+	border: 1px solid #fffd74;
+	background-image: linear-gradient(180deg, rgba(255, 204, 0, 0) 0%, #fc0 100%);
+    background-color: #fffd74;
+
+	.how-item__title {
+		color: #0d233b;
+	}
+}
+.how-item--dark {
+	backdrop-filter: blur(20px);
+	background: rgba(13, 35, 59, 0.7);
+
+	.how-item__digit {
+		color: #fffd74;
+	}
+
+	.how-item__title {
+		color: #fffd74;
+	}
+
+	.how-item__text {
+		color: #fffd74;
+	}
+}
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SHIPING SECTION
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.shipping {
+	padding-top: 80px;
+	padding-bottom: 60px;
+
+	.bg-image {
+	}
+	// .shipping__container
+	&__container {
+	}
+	// .shipping__label
+	&__label {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
+		color: #fff;
+		margin: 0 auto 80px;
+		text-align: center;
+		opacity: 0.7;
+	}
+	// .shipping__title
+	&__title {
+		font-family: "FunnelDisplay";
+		font-weight: 600;
+		font-size: 64px;
+		line-height: 100%;
+		text-align: center;
+		color: #fff;
+		margin-bottom: 80px;
+	}
+	// .shipping__description
+	&__description {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 120%;
+		text-align: center;
+		color: #fff;
+		max-width: 670px;
+		margin: 0 auto 80px;
+		opacity: 0.7;
+	}
+	// .shipping__images
+	&__images {
+		display: flex;
+		gap: 10px;
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	// .shipping__image
+	&__image {
+		overflow: hidden;
+		border-radius: 6px;
+		flex: 0 1 21%;
+		aspect-ratio: 263/311;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	// .shipping__image-wide
+	&__image-wide {
+		overflow: hidden;
+		border-radius: 6px;
+		flex: 0 1 57%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	// .shipping__main-text
+	&__main-text {
+		position: relative;
+	}
+	// .shipping__door-text
+	&__door-text {
+		position: absolute;
+		top: -98px;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		white-space: nowrap;
+		transform: scale(1.08);
+		font-weight: 700;
+		font-size: 180px;
+		line-height: 120%;
+		color: #fff;
+		z-index: 2;
+	}
+	// .shipping__coast-text
+	&__coast-text {
+		position: relative;
+		font-family: "FunnelDisplay";
+		width: 100%;
+		font-weight: 700;
+		font-size: 120px;
+		line-height: 120%;
+		text-align: center;
+		background-color: #fffd74;
+		background-image: linear-gradient(180deg, rgba(255, 204, 0, 0) 0%, #fc0 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		z-index: 3;
+	}
+}
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SERVICES SECTION
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SECTION
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SECTION
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SECTION
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SECTION
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
