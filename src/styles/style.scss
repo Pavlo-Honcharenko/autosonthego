@@ -735,6 +735,11 @@ section {
 	}
 
 	.request-quote {
+		display: none;
+
+		@media (max-width:toEm($mobile)){
+			display: flex;
+		}
 		position: absolute;
 		bottom: 0;
 		left: 0;
@@ -744,7 +749,6 @@ section {
 		border-radius: 5px;
 		fill: rgba(13, 35, 59, 0.5);
 		backdrop-filter: blur(20px);
-		display: flex;
 		flex-direction: column;
 		gap: 5px;
 		justify-content:center;
