@@ -1,17 +1,15 @@
 [data-fls-header-scroll] {
 	&.--header-scroll {
 		position: fixed;
-		// position: sticky;
 		top: 0;
 		right: 0;
 		left: 0;
 		z-index: 50;
+		// background-color: #42658b51;
+		background-image: linear-gradient(180deg, rgba(16, 51, 94, 0.5) 0%, rgba(16, 51, 94, 0.7) 100%);
 		
-		background-color: #0d233b86; 
 		backdrop-filter: blur(10px);
-		transition: all 0.7s ease;
-
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
 	}
 }
 

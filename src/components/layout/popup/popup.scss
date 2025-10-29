@@ -20,7 +20,7 @@ body::after {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	padding: 30px 10px;
+	padding: 10px 10px;
 	transition: visibility 0.8s ease 0s;
 	visibility: hidden;
 	pointer-events: none;
@@ -52,11 +52,8 @@ body::after {
 	transition:
 		transform 0.3s ease 0s,
 		visibility 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
 	width: 100%;
 	max-width: 900px;
-	border-radius: 20px;
 }
 
 [data-fls-popup-youtube-place] iframe {

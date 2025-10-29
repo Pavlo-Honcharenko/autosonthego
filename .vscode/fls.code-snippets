@@ -1,12 +1,4 @@
 {
-	"FunnelDisplayFontFamily": {
-		"scope": "scss",
-		"prefix": "fffd",
-		"body": [
-			"font-family: \"FunnelDisplay\";"
-		],
-		"description": "FunnelDisplay font"
-	},
 	"Rating": {
 		"scope": "html",
 		"prefix": "rating",
@@ -978,7 +970,7 @@
 	"fbc": {
 		"prefix": "fbc",
 		"body": [
-			"justify-content:center;\nalign-items: center;"
+			"justify-content:center;align-items: center;"
 		],
 		"description": "fbc"
 	},

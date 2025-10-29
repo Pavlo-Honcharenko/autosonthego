@@ -4,15 +4,20 @@
 	}
 	// .menu__body
 	&__body {
-		@media (max-width: toEm($mobile)) {
+		@media (max-width: toEm($tablet)) {
 			position: fixed;
 			width: 100%;
 			height: 100svh;
 			left: -100%;
 			top: 0;
 			overflow: auto;
-			padding: 50px 15px 30px 15px;
+			padding: 90px 15px 30px 15px;
 			transition: left 0.3s;
+			background-color: #0D233B;
+			flex-direction: column;
+			justify-content: flex-start;
+			gap: 0;
+
 			&::before {
 				content: "";
 				position: fixed;
@@ -33,7 +38,14 @@
 	}
 	// .menu__list
 	&__list {
-		@media (max-width: toEm($mobile)) {
+		@media (max-width: toEm($tablet)) {
+			border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+			border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+			flex-direction: column;
+			padding-top: 20px;
+			align-items: flex-start;
+			flex: 0 0 fit-content;
+			padding-bottom: 20px;
 		}
 	}
 	// .menu__item
@@ -41,7 +53,11 @@
 	}
 	// .menu__link
 	&__link {
-		@media (max-width: toEm($mobile)) {
+		@media (max-width: toEm($tablet)) {
+			font-weight: 600;
+			font-size: 20px;
+			line-height: 180%;
+			color: #fff;
 		}
 	}
 }
@@ -49,11 +65,15 @@
 //Burger Icon
 .icon-menu {
 	display: none;
-	@media (max-width: toEm($mobile)) {
+	@media (max-width: toEm($tablet)) {
 		display: block;
 		position: relative;
-		width: toRem(30);
-		height: toRem(18);
+		border-radius: 5px;
+		padding: 10px;
+		width: 42px;
+		height: 34px;
+		backdrop-filter: blur(20px);
+		background: rgba(255, 255, 255, 0.1);
 		z-index: 5;
 		@media (any-hover: none) {
 			cursor: default;
@@ -63,17 +83,17 @@
 		&::after {
 			content: "";
 			transition: all 0.3s ease 0s;
-			right: 0;
+			right: 10px;
 			position: absolute;
-			width: 100%;
+			width: 22px;
 			height: 2px;
 			background-color: #ffffff;
 		}
 		&::before {
-			top: 0;
+			top: 9px;
 		}
 		&::after {
-			bottom: 0;
+			bottom: 9px;
 		}
 		span {
 			top: calc(50% - 1px);
@@ -95,4 +115,99 @@
 			}
 		}
 	}
+}
+
+.mobile-content {
+	display: none;
+
+	@media (max-width:toEm($tablet)){
+		display: block; 
+		width: 100%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+
+		// .mobile-content __line-1
+		&__line-1 {
+			font-family: "FunnelDisplay";
+			font-weight: 600;
+			font-size: 20px;
+			line-height: 100%;
+			color: #fff;
+			margin-bottom: 20px;
+		}
+		// .mobile-content __line-2
+		&__line-2 {
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 100%;
+			letter-spacing: -0.02em;
+			text-transform: uppercase;
+			color: #fff;
+			margin-bottom: 20px;
+		}
+		// .fmobile-content __line-3
+		&__line-3 {
+			line-height: 100%;
+			text-decoration: underline;
+			text-decoration-skip-ink: none;
+			margin-bottom: 20px;
+			
+			a {
+				color: #fffd74;
+			}
+		}
+		// .mobile-content __line-4
+		&__line-4 {
+			line-height: 100%;
+			text-decoration: underline;
+			text-decoration-skip-ink: none;
+			margin-bottom: 20px;
+			
+			a {
+				color: #fffd74;
+			}
+		}
+		// .mobile-content__logos
+		&__logos {
+			display: flex;
+			gap: 20px;
+			align-items: center;
+
+			img {
+				flex: 0 0 40px;
+				height: 40px;
+
+				&:hover{
+					opacity: 0.5;
+				}
+				&:active{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.mobile-mini-menu {
+	display: none;
+
+	@media (max-width:toEm($tablet)){
+		display: block;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		width: 100%;
+
+		.menu {
+			align-items: flex-start;
+			// .menu__list
+			&__list {
+				border-top: initial;
+			}
+		}
+		.menu-item {
+		}
+
+	}
+
 }

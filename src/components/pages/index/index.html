@@ -1,8 +1,18 @@
 <main class="page page--index">
 	<section class="hero rounded">
 		<img src="@img/hero-bg.jpg" alt="" class="bg-image">
+		<img src="@img/hero-bg-mobile.jpg" alt="" class="bg-image-mobile">
 		<div class="hero__container">
+			<div class="header-phone mobile">
+				QUESTIONS? CALL US 
+				<a href="tel:+18669247447">866.924.7447</a>
+			</div>
 			<h1>We Deliver <span>Cars <span><span>Since</span><span>2008</span></span></span></h1>
+
+			<div class="request-quote">
+				<div>Request Quote Now or Call</div>
+				<a href="tel:+18669247447">866.924.7447</a>
+			</div>
 		</div>
 	</section>
 
@@ -44,6 +54,7 @@
 
 	<section class="welcome rounded">
 		<img src="@img/welcome-bg.png" alt="" class="bg-image">
+		<img src="@img/welcome-bg-mobile.png" alt="" class="bg-image-mobile">
 		<div class="welcome__container">
 			<div class="welcome__header">
 				<div class="welcome__label">
@@ -179,18 +190,21 @@
 				</div>
 				<div class="how__title">
 					<h2>Instant quote,<br> 
-					Quick delivery, Fully insured</h2>
+					<span>Quick delivery,</span> <span>Fully insured</span></h2>
 				</div>
 			</div>
 			<div class="how__body rounded">
 				<img src="@img/how-bg.jpg" alt="" class="bg-image">
+				<img src="@img/how-bg-mobile.jpg" alt="" class="bg-image-mobile">
 				<div class="how__container">
 					<ul class="how__items">
 						<li class="how__item how-item how-item--yellow">
-							<div class="how-item__digit grey-circle">
-								01
+							<div class="item-header">
+								<div class="how-item__digit grey-circle">
+									01
+								</div>
+								<img src="@img/icons/decor-1.svg" class="how-item__decor">
 							</div>
-							<img src="@img/icons/decor-1.svg" class="how-item__decor">
 							<div class="how-item__title">
 								<h3>Quote</h3>
 							</div>
@@ -200,10 +214,12 @@
 							</div>
 						</li>
 						<li class="how__item how-item how-item--dark">
-							<div class="how-item__digit yellow-grey-circle">
-								02
+							<div class="item-header">
+								<div class="how-item__digit yellow-grey-circle">
+									02
+								</div>
+								<img src="@img/icons/decor-2.svg" class="how-item__decor">
 							</div>
-							<img src="@img/icons/decor-2.svg" class="how-item__decor">
 							<div class="how-item__title">
 								<h3>Transport</h3>
 							</div>
@@ -213,10 +229,12 @@
 							</div>
 						</li>
 						<li class="how__item how-item how-item--yellow">
-							<div class="how-item__digit grey-circle">
-								03
+							<div class="item-header">
+								<div class="how-item__digit grey-circle">
+									03
+								</div>
+								<img src="@img/icons/decor-1.svg" class="how-item__decor">
 							</div>
-							<img src="@img/icons/decor-1.svg" class="how-item__decor">
 							<div class="how-item__title">
 								<h3>Service</h3>
 							</div>
@@ -232,7 +250,7 @@
 	</section>
 
 
-	<section class="shipping ">
+	<section class="shipping rounded">
 		<img src="@img/shipping-bg.jpg" alt="" class="bg-image">
 		<div class="shipping__container">
 			<div class="shipping__label white-circle">
@@ -248,9 +266,11 @@
 				<div class="shipping__image">
 					<img src="@img/shipping-01.jpg" alt="">
 				</div>
+				<div class="shipping__door-text">Door—to—Door</div>
 				<div class="shipping__image-wide">
 					<img src="@img/shipping-02.jpg" alt="">
 				</div>
+				<div class="shipping__coast-text">Coast—to—Coast</div>
 				<div class="shipping__image">
 					<img src="@img/shipping-03.jpg" alt="">
 				</div>
@@ -267,24 +287,621 @@
 		<div class="services__container">
 			<div class="services__header">
 				<div class="services__label white-circle">
-					label
+					Services
 				</div>
 				<div class="services__title">
-					<h2>title</h2>
+					<h2>Relax—Your Car is in 
+					<br>Good Hands</h2>
 				</div>
 			</div>
 			<div class="services__body">
 				<div class="services__items">
-					<div class="services__item">
+					<a href="" class="services__item">
 						<div class="service">
-							<div class="service__digit">0</div>
-							<div class="service__image">
-								<img src="@img" alt="Image">
+							<div class="service-top-line">
+								<div class="service__digit">01</div>
+								<div class="service__image">
+									<img src="@img/service-01.jpg" alt="Image">
+								</div>
 							</div>
 							<div class="service__text">
-								
+								Corporate Auto 
+								<br>Transport 
+								<br>Services
 							</div>
 						</div>
+					</a>
+					<a href="" class="services__item">
+						<div class="service">
+							<div class="service-top-line">
+								<div class="service__digit">02</div>
+								<div class="service__image">
+									<img src="@img/service-02.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="service__text">
+								Expedited <br>Auto <br>Transport
+							</div>
+						</div>
+					</a>
+					<a href="" class="services__item">
+						<div class="service">
+							<div class="service-top-line">
+								<div class="service__digit">03</div>
+								<div class="service__image">
+									<img src="@img/service-03.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="service__text">
+								Shipping 
+								<br>A Car 
+								<br>To Hawaii
+							</div>
+						</div>
+					</a>
+					<a href="" class="services__item services__item--big">
+						<div class="service">
+							<div class="service-top-line">
+								<div class="service__digit">04</div>
+								<div class="service__image">
+									<img src="@img/service-04.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="service__text">
+								Hyannis
+								<br>Auto
+								<br>Transport
+							</div>
+						</div>
+					</a>
+					<a href="" class="services__item services__item--big">
+						<div class="service">
+							<div class="service-top-line">
+								<div class="service__digit">05</div>
+								<div class="service__image">
+									<img src="@img/service-05.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="service__text">
+								Key West 
+								<br>Enclosed Auto 
+								<br>Transport
+							</div>
+						</div>
+					</a>
+					<a href="" class="services__item">
+						<div class="service">
+							<div class="service-top-line">
+								<div class="service__digit">06</div>
+								<div class="service__image">
+									<img src="@img/service-06.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="service__text">
+								Hamptons to 
+								<br>Palm Beach 
+								<br>Auto Transport
+							</div>
+						</div>
+					</a>
+					<a href="" class="services__item">
+						<div class="service">
+							<div class="service-top-line">
+								<div class="service__digit">07</div>
+								<div class="service__image">
+									<img src="@img/service-07.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="service__text">
+								Moke Electric 
+								<br>Car Enclosed 
+								<br>Transport
+							</div>
+						</div>
+					</a>
+					<a href="" class="services__item">
+						<div class="service">
+							<div class="service-top-line">
+								<div class="service__digit">08</div>
+								<div class="service__image">
+									<img src="@img/service-08.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="service__text">
+								Aspen Auto 
+								<br>Transport for 
+								<br>Snowbirds
+							</div>
+						</div>
+					</a>
+					<a href="" class="services__item">
+						<div class="service">
+							<div class="service-top-line">
+								<div class="service__digit">09</div>
+								<div class="service__image">
+									<img src="@img/service-09.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="service__text">
+								Tesla 
+								<br>Cybertruck 
+								<br>Auto Transport
+							</div>
+						</div>
+					</a>
+					<a href="" class="services__item">
+						<div class="service">
+							<div class="service-top-line">
+								<div class="service__digit">10</div>
+								<div class="service__image">
+									<img src="@img/service-10.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="service__text">
+								Land Rover 
+								<br>Defender Auto 
+								<br>Transport
+							</div>
+						</div>
+					</a>
+					<div class="services__item services__buttons services__item--big">
+						<div class="services-buttons">
+							<a href="tel:+18669247447" class="services-button-1">
+								<div class="text-top">
+									Didn't Find
+									<br>Your Route?
+								</div>
+								<div class="text-bottom">
+									CALL US <span>866.924.7447</span>
+								</div>
+							</a>
+							<a href="" class="services-button-2">
+								<span>All services</span>
+								<img src="@img/icons/arrow-form--right-black.svg" alt="arrow">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="why rounded">
+		<img src="@img/why-bg.jpg" class="bg-image" alt="background">
+		<div class="why__container">
+			<div class="why__label white-circle">
+				WHY CHOOSE US
+			</div>
+			<div class="why__title">
+				<h2>
+					We Make
+					<br>Auto Transport Effortless
+				</h2>
+			</div>
+			<div class="why-ratings">
+				<div class="why-rating">
+					<div class="why-rating__image">
+						<img src="@img/icons/why-rating-1.png" alt="rating">
+					</div>
+					<div class="why-rating__content">
+						<div class="why-rating__digits">
+							4.7/5.0
+						</div>
+						<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path opacity="0.3" d="M3.73482 7.5C3.00607 7.5 2.3583 7.33806 1.7915 7.01417C1.24494 6.69028 0.809717 6.25506 0.48583 5.7085C0.161943 5.1417 0 4.49393 0 3.76518C0 3.03644 0.161943 2.38866 0.48583 1.82186C0.809717 1.25506 1.24494 0.809716 1.7915 0.485829C2.3583 0.161943 3.00607 0 3.73482 0C4.46356 0 5.11134 0.161943 5.67814 0.485829C6.24494 0.809716 6.69028 1.25506 7.01417 1.82186C7.33806 2.38866 7.5 3.03644 7.5 3.76518C7.5 4.49393 7.33806 5.1417 7.01417 5.7085C6.69028 6.25506 6.24494 6.69028 5.67814 7.01417C5.11134 7.33806 4.46356 7.5 3.73482 7.5Z" fill="#FFFD74" />
+						</svg>
+						<div class="why-rating__text">
+							uShip Reviews
+						</div>
+					</div>
+				</div>
+				<div class="why-rating">
+					<div class="why-rating__image">
+						<img src="@img/icons/why-rating-2.png" alt="rating">
+					</div>
+					<div class="why-rating__content">
+						<div class="why-rating__digits">
+							4.8/5.0 
+						</div>
+						<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path opacity="0.3" d="M3.73482 7.5C3.00607 7.5 2.3583 7.33806 1.7915 7.01417C1.24494 6.69028 0.809717 6.25506 0.48583 5.7085C0.161943 5.1417 0 4.49393 0 3.76518C0 3.03644 0.161943 2.38866 0.48583 1.82186C0.809717 1.25506 1.24494 0.809716 1.7915 0.485829C2.3583 0.161943 3.00607 0 3.73482 0C4.46356 0 5.11134 0.161943 5.67814 0.485829C6.24494 0.809716 6.69028 1.25506 7.01417 1.82186C7.33806 2.38866 7.5 3.03644 7.5 3.76518C7.5 4.49393 7.33806 5.1417 7.01417 5.7085C6.69028 6.25506 6.24494 6.69028 5.67814 7.01417C5.11134 7.33806 4.46356 7.5 3.73482 7.5Z" fill="#FFFD74" />
+						</svg>
+						<div class="why-rating__text">
+							Google  Reviews
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="why-items">
+				<div class="why-item why-item--1">
+					<div class="why-item__image">
+						<img src="@img/icons/why-01.svg" alt="icon">
+					</div>
+					<div class="why-item__title">
+						<h3>
+							Family-Owned 
+							<br>& Operated
+						</h3>
+					</div>
+					<div class="why-item__text">
+						<p>Founded in 2008, Autos On The Go has remained family-run from day one. </p>
+						<p>We treat every shipment with the same care and attention we’d give our own vehicles, building trust through years of reliable service and genuine relationships with our clients.</p>
+					</div>
+				</div>
+				<div class="why-item why-item--2">
+					<div class="why-item__image">
+						<img src="@img/icons/why-02.svg" alt="icon">
+					</div>
+					<div class="why-item__title">
+						<h3>
+							Specialized,
+							<br>Luxury Shipping
+						</h3>
+					</div>
+					<div class="why-item__text">
+						<p>We specialize in transporting high-end and specialty vehicles — from Teslas and Defenders to rare classics and exotics. </p>
+						<p>Our focus on precision, communication, and white-glove handling ensures your car arrives exactly as it left, no matter the distance.</p>
+					</div>
+				</div>
+				<div class="why-item why-item--3">
+					<div class="why-item__image">
+						<img src="@img/icons/why-03.svg" alt="icon">
+					</div>
+					<div class="why-item__title">
+						<h3>
+							Real People, Not Call 
+							<br>Centers
+						</h3>
+					</div>
+					<div class="why-item__text">
+						<p>When you reach out to us, you’re speaking directly with a real transport specialist — not a call center. </p>
+						<p>With offices in Michigan, Virginia, and two locations in Florida, our team provides hands-on support across the country, managing every detail from your first quote to final delivery.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="testimonials">
+		<div class="testimonials__container">
+			<div class="testimonials__header">
+				<div class="testimonials__label white-circle">
+					Testimonials
+				</div>
+				<div class="testimonials__title">
+					<h2>
+						Customers
+						<br>Say
+					</h2>
+				</div>
+			</div>
+			<div class="testimonials__body">
+				<div data-fls-slider class="testimonials__slider swiper">
+					<div class="testimonials__wrapper swiper-wrapper">
+						<!-- Slide -->
+						<div class="testimonials__slide swiper-slide">
+							<div class="review">
+								<div class="review__text">
+									<p>Text, email or phone call… Mirel is always there to answer my questions and give me price quotes at all times of the day. Due to the fact that I work for a nationwide moving company, our hectic schedule can make for tight windows for pickup and drop off. We cater to high end clients and expect a lot out of all our movers. </p>
+
+									<p>Our experience with Autos On The Go has been simply awesome.</p>
+								</div>
+								<div class="review__name">
+									Edwin Cintron
+								</div>
+								<div class="review__role">
+									All My Sons Moving · Jupiter, FL
+								</div>
+							</div>
+						</div>
+						<!-- Slide -->
+						<div class="testimonials__slide swiper-slide">
+							<div class="review">
+								<div class="review__text">
+									<p>As a Cadillac enthusiast and “cool car” connoisseur, I trust all my vehicles with Mirel Molnar. I’ve been using Autos On The Go for all my shipping needs since 2008. Mirel always assigns very reliable and professional carriers to all of my vehicles. </p>
+
+									<p>Most vehicles are trailered via enclosed car haulers and the service never disappoints. I already have and would no doubt recommend him to others that are in need of auto transportation.</p>
+								</div>
+								<div class="review__name">
+									Dave Brown
+								</div>
+								<div class="review__role">
+									Private collector · Monroe, MI
+								</div>
+							</div>
+						</div>
+						
+						<!-- Slide -->
+						<div class="testimonials__slide swiper-slide">
+							<div class="review">
+								<div class="review__text">
+									<p>Text, email or phone call… Mirel is always there to answer my questions and give me price quotes at all times of the day. Due to the fact that I work for a nationwide moving company, our hectic schedule can make for tight windows for pickup and drop off. We cater to high end clients and expect a lot out of all our movers. </p>
+
+									<p>Our experience with Autos On The Go has been simply awesome.</p>
+								</div>
+								<div class="review__name">
+									Edwin Cintron
+								</div>
+								<div class="review__role">
+									All My Sons Moving · Jupiter, FL
+								</div>
+							</div>
+						</div>
+						<!-- Slide -->
+						<div class="testimonials__slide swiper-slide">
+							<div class="review">
+								<div class="review__text">
+									<p>As a Cadillac enthusiast and “cool car” connoisseur, I trust all my vehicles with Mirel Molnar. I’ve been using Autos On The Go for all my shipping needs since 2008. Mirel always assigns very reliable and professional carriers to all of my vehicles. </p>
+
+									<p>Most vehicles are trailered via enclosed car haulers and the service never disappoints. I already have and would no doubt recommend him to others that are in need of auto transportation.</p>
+								</div>
+								<div class="review__name">
+									Dave Brown
+								</div>
+								<div class="review__role">
+									Private collector · Monroe, MI
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-buttons">
+						<button type="button" class="swiper-button-prev">
+							<div class="swiper-button-icon">
+								<svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 2.88672L5 -3.25959e-05V5.77347L0 2.88672ZM25 2.88672V3.38672H4.5V2.88672V2.38672H25V2.88672Z" fill="white" />
+								</svg>
+							</div>
+						</button>
+						<button type="button" class="swiper-button-next">
+							<div class="swiper-button-icon">
+								<svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 2.88672L5 -3.25959e-05V5.77347L0 2.88672ZM25 2.88672V3.38672H4.5V2.88672V2.38672H25V2.88672Z" fill="white" />
+								</svg>
+							</div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="faqs">
+		<div class="faqs__container">
+			<div class="faqs__header">
+				<div class="faqs__label white-circle">
+					FAQS
+				</div>
+				<div class="faqs__title">
+					<h2>
+						Have Questions Before You Ship?
+					</h2>
+				</div>
+			</div>
+			<div class="faqs__body">
+				<div class="faqs__spollers">
+					<div data-fls-spollers class="spollers">
+						<details class="spollers__item">
+							<summary class="spollers__title">
+								<div class="spoller-title">
+									<div class="spoller-title__number">
+										<div class="number white-circle">
+											01
+										</div>
+									</div>
+									<div class="spoller-title__title">
+										<h3>How much will it cost to transport my car?</h3>
+									</div>
+								</div>
+							</summary>
+							<div class="spollers__body">
+								<div class="spoller-body">
+									<div class="spoller-body__border">
+									</div>
+									<div class="spoller-body__content">
+										<p>The cost of transporting an automobile is determined by several factors: the distance involved, the type of vehicle (SUV’s are bigger and heavier, so they cost more to transport), whether or not the vehicle is in running condition etc. And most importantly it depends on the market price for other vehicles being shipped throughout the nation. Each season is different.</p>
+										<div class="bottom-block">
+											DIDN`T FIND YOUR QUESTIONS?
+											<br>CALL US <a href="tel:+18669247447">866.924.7447</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</details>
+						
+						<details class="spollers__item">
+							<summary class="spollers__title">
+								<div class="spoller-title">
+									<div class="spoller-title__number">
+										<div class="number white-circle">
+											02
+										</div>
+									</div>
+									<div class="spoller-title__title">
+										<h3>Does Autos On The Go insure the vehicles they transport?</h3>
+									</div>
+								</div>
+							</summary>
+							<div class="spollers__body">
+								<div class="spoller-body">
+									<div class="spoller-body__border">
+									</div>
+									<div class="spoller-body__content">
+										<p>Yes. Each and every vehicle we transport is fully insured up to $1,000,0000 cargo and $1,000,000 public liability with no deductibles to our customers. This is our standard policy.</p>
+										<div class="bottom-block">
+											DIDN`T FIND YOUR QUESTIONS?
+											<br>CALL US <a href="tel:+18669247447">866.924.7447</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</details>
+
+						<details class="spollers__item">
+							<summary class="spollers__title">
+								<div class="spoller-title">
+									<div class="spoller-title__number">
+										<div class="number white-circle">
+											03
+										</div>
+									</div>
+									<div class="spoller-title__title">
+										<h3>Where will you pick up my car?</h3>
+									</div>
+								</div>
+							</summary>
+							<div class="spollers__body">
+								<div class="spoller-body">
+									<div class="spoller-body__border">
+									</div>
+									<div class="spoller-body__content">
+										<p>Autos On The Go will schedule door-to-door service, but sometimes the transporter is unable to manage an 80-foot truck through a residential neighborhood or narrow dirt road. In this case, the driver may ask you to meet him at the nearest parking lot.</p>
+										<div class="bottom-block">
+											DIDN`T FIND YOUR QUESTIONS?
+											<br>CALL US <a href="tel:+18669247447">866.924.7447</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</details>
+
+						<details class="spollers__item">
+							<summary class="spollers__title">
+								<div class="spoller-title">
+									<div class="spoller-title__number">
+										<div class="number white-circle">
+											04
+										</div>
+									</div>
+									<div class="spoller-title__title">
+										<h3>Am I allowed to place personal items in the car being shipped?</h3>
+									</div>
+								</div>
+							</summary>
+							<div class="spollers__body">
+								<div class="spoller-body">
+									<div class="spoller-body__border">
+									</div>
+									<div class="spoller-body__content">
+										<p>Any personal property must be confined to trunk, with no heavy articles, and not to exceed 50 lbs. Carrier is not liable for personal items left in vehicle, nor for damage caused to vehicle from excessive or improper loading of personal items.</p>
+										<div class="bottom-block">
+											DIDN`T FIND YOUR QUESTIONS?
+											<br>CALL US <a href="tel:+18669247447">866.924.7447</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</details>
+
+						<details class="spollers__item">
+							<summary class="spollers__title">
+								<div class="spoller-title">
+									<div class="spoller-title__number">
+										<div class="number white-circle">
+											05
+										</div>
+									</div>
+									<div class="spoller-title__title">
+										<h3>When should I schedule a pickup?</h3>
+									</div>
+								</div>
+							</summary>
+							<div class="spollers__body">
+								<div class="spoller-body">
+									<div class="spoller-body__border">
+									</div>
+									<div class="spoller-body__content">
+										<p>The ideal scenario is for us to be informed at least one week in advance prior to your requested transport date in order for us to reserve space for your vehicle on the truck and coordinate the proper logistics. Most of the time we can work with even shorter time frames and welcome any request.</p>
+										<div class="bottom-block">
+											DIDN`T FIND YOUR QUESTIONS?
+											<br>CALL US <a href="tel:+18669247447">866.924.7447</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</details>
+
+						<details class="spollers__item">
+							<summary class="spollers__title">
+								<div class="spoller-title">
+									<div class="spoller-title__number">
+										<div class="number white-circle">
+											06
+										</div>
+									</div>
+									<div class="spoller-title__title">
+										<h3>Do I have to be present when my vehicle is picked up?</h3>
+									</div>
+								</div>
+							</summary>
+							<div class="spollers__body">
+								<div class="spoller-body">
+									<div class="spoller-body__border">
+									</div>
+									<div class="spoller-body__content">
+										<p>You or your designated representative must be present to sign the release form upon pickup, and to accept the vehicle upon delivery.</p>
+										<div class="bottom-block">
+											DIDN`T FIND YOUR QUESTIONS?
+											<br>CALL US <a href="tel:+18669247447">866.924.7447</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</details>
+
+						<details class="spollers__item">
+							<summary class="spollers__title">
+								<div class="spoller-title">
+									<div class="spoller-title__number">
+										<div class="number white-circle">
+											07
+										</div>
+									</div>
+									<div class="spoller-title__title">
+										<h3>How can I check on the status of my transport?</h3>
+									</div>
+								</div>
+							</summary>
+							<div class="spollers__body">
+								<div class="spoller-body">
+									<div class="spoller-body__border">
+									</div>
+									<div class="spoller-body__content">
+										<p>We provide you with a toll free number you can call at all times in order to check the status. We also reply within minutes via email or text message.</p>
+										<div class="bottom-block">
+											DIDN`T FIND YOUR QUESTIONS?
+											<br>CALL US <a href="tel:+18669247447">866.924.7447</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</details>
+					</div>
+				</div>
+				<div class="faqs__aside">
+					<div class="video-block">
+						<div class="video-block__title grey-circle">
+							<h3>
+								Welcome to 
+								<br>Autos On The Go
+							</h3>
+						</div>
+						<div class="video-block__video">
+							<iframe width="100%" src="https://www.youtube.com/embed/0J9jAjREEsw?si=tapaLRs2pXIQXdKF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						</div>
+						<div class="video-block__text">
+							Speak to an agent 
+							<br><a href="tel:+18669247447">866.924.7447</a>
+						</div>
+					</div>
+					<a href="#" data-fls-popup-link="request" class="request-button">
+						<span>Request Quote Now</span>
+						<img src="@img/icons/arrow-form--right-black.svg" alt="arrow">
+					</a>
+					<div class="text-aside">
+						Door —to—Door : Coast—to—Coast
 					</div>
 				</div>
 			</div>
